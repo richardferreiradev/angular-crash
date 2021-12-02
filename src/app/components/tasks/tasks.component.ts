@@ -12,4 +12,8 @@ export class TasksComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  taskClick() {
+    alert('task clicked');
+  }
 }

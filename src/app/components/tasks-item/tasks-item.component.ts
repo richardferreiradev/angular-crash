@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { Task } from '../../Task';
 @Component({
   selector: 'app-tasks-item',
@@ -6,8 +6,13 @@ import { Task } from '../../Task';
   styleUrls: ['./tasks-item.component.css'],
 })
 export class TasksItemComponent implements OnInit {
-  @Input() task: Task;
+  @Input() task!: Task;
+  @Output() taskClick = new EventEmitter();
   constructor() {}
 
   ngOnInit(): void {}
+
+  onClick() {
+    this.taskClick.emit();
+  }
 }
