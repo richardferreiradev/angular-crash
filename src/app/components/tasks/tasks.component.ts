@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { TASKS } from '../../mock-tasks';
 import { Task } from '../../Task';
 import { TaskService } from 'src/app/services/task.service';
 
@@ -27,5 +26,9 @@ export class TasksComponent implements OnInit {
 
   toggleReminder(task: Task) {
     task.reminder = !task.reminder;
+  }
+
+  postTask(task: Task) {
+    this._taskService.postTask(task).subscribe();
   }
 }
