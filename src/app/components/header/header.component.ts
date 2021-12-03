@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -6,11 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
+  @Output() onAddTask = new EventEmitter();
+  addTask: boolean = false;
   title: string = 'Task Tracker';
   constructor() {}
 
   ngOnInit(): void {}
   toggleAddTask() {
-    alert('Task add');
+    this.addTask = !this.addTask;
   }
 }
